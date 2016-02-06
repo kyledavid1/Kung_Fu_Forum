@@ -1,0 +1,15 @@
+<!-- grabbing the first user in the column and their id. Then their first name.-->
+ <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+
+	<h1>Welcome, <%= @users.first["fname"].capitalize %></h1>
+
+	<div class="row">
+		<div class="container">
+			<h2>Topics You've Posted</h2>
+			<% @topic_users.each do |topic| %>
+    		<h3><%= "<a href=\"/topics/#{topic['id']}\">#{topic['titles']}</a>" %></h3> 
+    	<% end %>
+    	<button type="post" class="btn btn-success"><a href="/topics/form">Post a Topic</a></button>
+    </div>
+  </div>

@@ -1,0 +1,55 @@
+ 
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Welcome to the Kung Fu Forum</h1>
+        <h2>Post, comment and view exciting topics about anything Kung Fu.</h2>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="container">
+          <h2>About This Forum</h2>
+          <p>This forum is dedicated to providing insight into one of the worlds most fascinating topics. <br/>Here, you can learn about the mysteries and enchantements of Traditional Kung Fu through the content posted by our subscribers. <br/>Please don't be a stranger and post, comment and engage in some of the most enticing coversations.
+          </p>
+          <button type="post" class="btn btn-success"><a href="/topics/form">Post a Topic</a></button>
+          <!-- I want the user to be able to create a topic here. Redirect to the forms page and write their topic with text there. -->
+
+        </div>
+      </div>
+
+      <!-- <div class="container"> -->
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="container">
+
+        
+        <% @topics.each do |topic| %>
+          <h3><%= "<a href=\"/topics/#{topic['id']}\">#{topic['titles']}</a>" %></h3> 
+          <p><%= "#{topic['topic_text']}" %></p>
+          
+          <% end %>
+          
+            <button type="submit" class="btn btn-success"><a href="/topics">View All Topics</button>
+
+          
+        </div>
+
+      </div>
+      <hr>
+
+      <footer>
+        <p>&copy; Kyle Stengline</p>
+      </footer>
+    </div> <!-- /container -->
+
+ <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

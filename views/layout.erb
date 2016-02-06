@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Kung Fu Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="../../css/jumbotron.css" rel="stylesheet"> -->
+    
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle Naviagation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Kung Fu Forum</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+        
+          <% if !current_user %>
+          <form class="navbar-form navbar-right" method="post" action="/signin">
+            <div class="form-group">
+              <input type="text"  name="login_name" placeholder="User Name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <input type="password" name="login_password" placeholder="Password" class="form-control" required>
+            </div>
+            
+             <button type="submit" class="btn btn-success">Sign In</button>
+             <!-- I want to change the Sign Up button -->
+            <button type='signup'class='btn btn-success'><a href="/signup">Sign Up</a></button>
+          </form>
+          <% else %>
+
+            <div class="user"> 
+
+              <h3><%= "You are signed in as <a href=\"/users/#{current_user['id']}\">#{current_user['login_name']}</a>" %></h3>
+
+            </div>
+         <h5 class="logout">
+              <button type='signout' class='btn btn-success'><a href="/logout">Sign Out</a></button>
+            </h5>  
+          <% end %>
+          
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+  
+    <%= yield %>
+
+  </body>
+</html>
+
+
+
+
+

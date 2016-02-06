@@ -1,0 +1,73 @@
+h2 {
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 15px;
+  margin-right: 50px;
+}
+h4 {
+  text-align: center;
+  margin-right: 50px;
+  padding-bottom: 25px;
+}
+h5 {
+  background: #b2b2b2;
+  margin: 0 auto;
+  padding: 15px;
+  max-width: 400px;
+}
+
+.comments {
+  text-align: center;
+  margin-right: 40px;
+  padding-bottom: 20px;
+  font-style: bold;
+  display: inline;
+  font-size: 1em;
+  /*background: #b2b2b2;*/
+}
+
+form.view_topic {
+  width: 505px;
+  background: #222;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+form.view_topic div.input-row {
+  padding: 6px;
+}
+
+form.view_topic div.input-row label {
+  vertical-align: top;
+  font-size: 20px;
+  display: inline-block;
+  width: 120px;
+  color: white;
+}
+
+form.view_topic div.input-row[type=text] {
+  font-size: 22px;
+  width: 440px;
+  height: 30px;
+  padding: 6px;
+  border: 1px solid #bbb;
+}
+
+form.view_topic div.input-row textarea {
+  font-size: 22px;
+  padding: 6px;
+  width: 450px;
+  height: 200px;
+  border: 1px solid #bbb;
+  background-color: #222;
+  color: white;
+}
+
+form.view_topic div.input-row input[type=submit] {
+  font-size: 22px;
+  border: 2px solid black;
+  margin-left: 126px;
+  background: #fff;
+  padding: 6px 20px;
+  cursor: pointer;
+}

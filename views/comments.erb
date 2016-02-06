@@ -1,0 +1,23 @@
+<h1>Comments Page</h1>
+
+	<% @comments.each do |comment| %>
+		<p><%= "#{comment['content']}" %></p>
+	<% end %>
+	<!-- comments won't display in db, therefore .each is being called on a nil class. Fix comments issue and you fix .each issue. -->
+
+		<!-- <div class="input-row">
+		<label for="users_login">User Name: </label>
+		<input type="text" name="users_login" required/> 
+		</div>
+
+		<div class="input-row">
+		<label for="topic" required>Topic: </label>
+		<textarea name="topic_text" required></textarea>
+		</div>
+
+		<div class="input-row">
+		<input type="submit" value="Post Topic" /> 
+		</div> -->
+	<!-- </form>
+</div>
+ -->

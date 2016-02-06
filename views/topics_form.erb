@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/css/form_style.css">
+
+<div class="main_content">
+<h1>Create a New Topic</h1>
+
+	<form class="topics_form" action="/topics/form" method="post">
+
+	<div class="input-row">
+		<label for="titles" >Title: </label>
+		<input type="text" name="titles" required/> 
+		</div>
+
+		<div class="input-row">
+		<label for="topic" required>Topic: </label>
+		<textarea name="topic_text" required></textarea>
+		 <%"<input type=\"hidden\" name=\"#{@current_user}\""%>
+		</div>
+
+		<div class="input-row">
+		<input type="submit" value="Post Topic" /> 
+		</div>
+	</form>
+</div>
+

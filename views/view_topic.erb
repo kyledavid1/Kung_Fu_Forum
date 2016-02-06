@@ -1,0 +1,29 @@
+<link rel="stylesheet" type="text/css" href="/css/comments.css">
+
+<div class="topics">
+
+<h2><%= "#{@view_topic['titles']}" %></h2>
+  <h4><%= "#{@view_topic['topic_text']}" %></h4>
+ </div>
+
+<div class="comments">
+ <% @comments_display.each do |comment| %>
+		<h5><%= "#{current_user['login_name']}" %> commented: <%= "#{comment['content']}" %></h5>
+		<!-- Comment from <#%#= "#{@users_comment[:login_name]}" %>: -->
+		<!-- I want the comment to have an author. The above only stores the current users comment, but not the actual user who commented. -->
+	<% end %>
+	</div>
+
+  <form class="view_topic" action="/comments" method="post">
+	<div class="input-row">
+		<label for="comments">Comment: </label>
+		<textarea name="content" required></textarea>
+		<input type="hidden" name="topic_id" value="<%= @comment_topics %>">
+		<!-- <input type="hidden" name="topic_id" value="<#%#=# @topic[#"id"] %>"> -->
+
+		</div>
+
+		<div class="input-row">
+		<input type="submit" value="Post Comment" /> 
+		</div>
+

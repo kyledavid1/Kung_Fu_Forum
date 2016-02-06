@@ -1,0 +1,12 @@
+ <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+
+<div class="container">
+
+<h1>Light Kung Fu Reading Material</h1>
+<% @topics.each do |topic| %>
+	<h2><%= "<a href=\"/topics/#{topic['id']}\">#{topic['titles']}</a>" %></h2>
+    <p><%= "#{topic['topic_text']}" %></p>
+        <% end %>
+        </div>
+         
